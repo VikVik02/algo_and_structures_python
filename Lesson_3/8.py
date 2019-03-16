@@ -4,3 +4,19 @@
 записывать ее в последнюю ячейку строки.
 В конце следует вывести полученную матрицу.
 """
+
+M = 5
+N = 4
+
+a = []
+for i in range(M):
+    b = []
+    s = 0
+    b = input(f"Введите {N - 1} элемента строки").split()
+    for j in range(N - 1):
+        b[j] = int(b[j])
+        s += b[j]
+    b.append(s)
+    a.append(b)
+for i in a:
+    print(i)
