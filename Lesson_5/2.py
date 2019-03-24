@@ -5,3 +5,16 @@
 [‘C’, ‘4’, ‘F’] соответственно. Сумма чисел из примера: [‘C’, ‘F’, ‘1’],
 произведение - [‘7’, ‘C’, ‘9’, ‘F’, ‘E’].
 """
+import collections
+
+nums = collections.defaultdict(list)
+
+for i in range(2):
+    j = input(f'Введите {i + 1}-е шестнадцатеричное число: ')
+    nums[i + 1] = list(j)
+print(nums)
+
+lst = [int(''.join(i), 16) for i in nums.values()]
+
+print(f'Сумма введенных чисел: {list(hex(sum(lst)).upper())}')
+print(f'Произведение введенных чисел : {list(hex(lst[0] * lst[1]).upper())}')
